@@ -1,6 +1,6 @@
 # Creating security group
 resource "aws_security_group" "allow_rabbitmq" {
-  name        = "allow_${var.COMPONENT}"
+  name        = "allow_rabbitmq"
   description = "Allow all inbound traffic"
 
   ingress {
