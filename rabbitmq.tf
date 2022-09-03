@@ -7,7 +7,7 @@ resource "aws_spot_instance_request" "rabbitmq" {
   subnet_id              = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS[0]
 
   tags = {
-    Name = "${var.COMPONENT}-${var.ENV}"
+    Name = "rabbitmq-${var.ENV}"
   }
 }
 
