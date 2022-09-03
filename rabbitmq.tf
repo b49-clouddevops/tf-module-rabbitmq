@@ -15,7 +15,7 @@ resource "null_resource" "rabbitmq-installation" {
   provisioner "remote-exec" {
     triggers = {    
         a = timestamp()  # Everytime you run, when compared to the last time, the time changes, so it will be triggered all the time.
-  }
+      }
       connection {
         type     = "ssh"
         user     = "centos"
