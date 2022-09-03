@@ -20,6 +20,6 @@ resource "aws_security_group" "allow_rabbitmq" {
   }
 
   tags = {
-    Name = "allow_${var.COMPONENT}"
+    Name = "allow-rabbitmq"
   }
 }
