@@ -7,5 +7,4 @@ resource "aws_route53_record" "rabbitmq-record" {
   records = [aws_spot_instance_request.rabbitmq.private_ip]
   depends_on = [aws_spot_instance_request.rabbitmq]
      
-  ]
 }
