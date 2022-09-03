@@ -12,6 +12,14 @@ resource "aws_security_group" "allow_rabbitmq" {
     cidr_blocks      = [data.terraform_remote_state.vpc.outputs.VPC_CIDR, var.WORKSPATION_IP]
   }
 
+    ingress {
+    description      = "SSH From WS"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = [data.terraform_remote_state.vpc.outputs.VPC_CIDR, var.WORKSPATION_IP]
+  }
+
   egress {
     from_port        = 0
     to_port          = 0
