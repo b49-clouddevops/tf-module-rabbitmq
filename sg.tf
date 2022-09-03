@@ -1,7 +1,8 @@
 # Creating security group
 resource "aws_security_group" "allow_rabbitmq" {
   name        = "allow_rabbitmq"
-  description = "Allow all inbound traffic"
+  description = "Allow rabbitmq inbound traffic"
+  vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
 
   ingress {
     description      = "RabbitMQ to VPC"
