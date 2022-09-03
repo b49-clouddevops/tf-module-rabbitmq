@@ -5,4 +5,7 @@ resource "aws_route53_record" "rabbitmq-record" {
   type    = "CNAME"
   ttl     = 660
   records = [aws_spot_instance_request.rabbitmq.private_ip]
+  depends_on = [aws_spot_instance_request.rabbitmq]
+     
+  ]
 }
