@@ -24,9 +24,8 @@ resource "null_resource" "rabbitmq-installation" {
         host     = aws_spot_instance_request.rabbitmq.private_ip
       } 
     inline = [
-     "ansible-pull -U https://github.com/b49-clouddevops/ansible.git -e COMPONENT=rabbitmq -e ENV=dev roboshop.yml"
-     "sudo disable-auto-shutdown" 
-     "sudo set-hostname rabbitmq"
+     "ansible-pull -U https://github.com/b49-clouddevops/ansible.git -e COMPONENT=rabbitmq -e ENV=dev roboshop.yml && sudo disable-auto-shutdown"
+
       ]
     }
 }
