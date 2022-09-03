@@ -6,7 +6,7 @@ resource "aws_spot_instance_request" "rabbitmq" {
   vpc_security_group_ids = [aws_security_group.allow_rabbitmq.id]
   subnet_id              = data.terraform_remote_state.vpc.outputs.PUBLIC_SUBNET_ID[0]
     depends_on = [
-     aws_security_group.allow_redis
+     aws_security_group.allow_rabbitmq
      ]
   tags = {
     Name = "rabbitmq-${var.ENV}"
