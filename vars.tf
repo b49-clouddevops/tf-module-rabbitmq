@@ -2,6 +2,5 @@ variable "ENV" {}
 variable "WORKSPATION_IP" {}
 
 
-variable " " {
-  
-}
+variable "RABBITMQ_PORT" {}
+variable "RABBITMQ_INSTANCE_TYPE" {}
