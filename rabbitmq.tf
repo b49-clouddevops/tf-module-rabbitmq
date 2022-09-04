@@ -12,9 +12,9 @@ resource "aws_spot_instance_request" "rabbitmq" {
 }
 
 resource "null_resource" "rabbitmq-installation" {
-  triggers = {    
-        a = timestamp()  # Everytime you run, when compared to the last time, the time changes, so it will be triggered all the time.
-    }
+  # triggers = {    
+  #       a = timestamp()  # Everytime you run, when compared to the last time, the time changes, so it will be triggered all the time.
+  #   }
   provisioner "remote-exec" {
       connection {
         type     = "ssh"
