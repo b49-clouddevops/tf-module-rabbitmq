@@ -6,7 +6,7 @@ resource "aws_security_group" "allow_rabbitmq" {
 
   ingress {
     description      = "RabbitMQ to VPC"
-    from_port        = 5672
+    from_port        = var.RABBITMQ_PORT
     to_port          = 5672
     protocol         = "tcp"
     cidr_blocks      = [data.terraform_remote_state.vpc.outputs.VPC_CIDR, var.WORKSPATION_IP]
